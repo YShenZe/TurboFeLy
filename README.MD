@@ -2,6 +2,8 @@
 
 现代化的界面无刷新加载库兼原生 SPA 加速库，提供比传统Pjax更智能的解决方案。通过拦截导航事件、智能缓存管理和差异DOM更新，实现类单页应用的流畅体验。
 
+[从Pjax迁移到TurboFeLy](qianyi.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Minified Size](https://img.shields.io/badge/minified-24.44KB-green)
 
