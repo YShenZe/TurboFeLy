@@ -30,11 +30,11 @@
 ### CDN引入
 ```html
 <!-- 生产环境 -->
-<script src="https://cdn.jsdelivr.net/npm/turbofely@latest/dist/turbofely.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/turbofely@latest/src/turbofely.js"></script>
 
 <!-- ESM模块 -->
 <script type="module">
-  import TurboFeLy from 'https://cdn.jsdelivr.net/npm/turbofely@latest/dist/turbofely.esm.js'
+  import TurboFeLy from 'https://cdn.jsdelivr.net/npm/turbofely@latest/src/turbofely.esm.js'
 </script>
 ```
 
