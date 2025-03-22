@@ -23,42 +23,6 @@ flowchart TB
     style G fill:#2196F3,stroke:#1565C0
 ```
 
-### 2. 缓存机制实现差异
-```mermaid
-classDiagram
-    class PjaxCache {
-        + store: Object
-        + get(key): String
-        + set(key, value): void
-    }
-    
-    class TurboCache {
-        + maxSize: Number
-        + ttl: Number
-        + lruKeys: Array
-        + storage: Map
-        + get(key): <html: String, expireAt: Number>
-        + set(key, value): void
-        + prune(): void
-    }
-    
-    interface LRUAlgorithm {
-        + updateLRU(key): void
-    }
-    
-    interface TTLExpiration {
-        + checkExpiration(key): Boolean
-    }
-    
-    interface DimensionIsolation {
-        + isolate(key): void
-    }
-    
-    TurboCache <|-- LRUAlgorithm
-    TurboCache <|-- TTLExpiration
-    TurboCache <|-- DimensionIsolation
-```
-
 ## 分模块技术迁移方案
 
 ### 1. 配置项映射表
