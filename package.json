@@ -1,0 +1,31 @@
+{
+  "name": "TurboFeLy",
+  "version": "1.0.0",
+  "main": "src/turbofely.js",
+  "module": "src/turbofely.esm.js",
+  "unpkg": "src/turbofely.js",
+  "jsdelivr": "src/turbofely.js",
+  "keywords": [
+    "SPA",
+    "无刷新加载",
+    "页面加速",
+    "前端框架",
+    "现代化界面",
+    "Pjax替代方案",
+    "路由管理",
+    "性能优化"
+  ],
+  "author": "MengZe2",
+  "license": "MIT",
+  "description": "TurboFeLy 是一个现代化的界面无刷新加载库兼原生 SPA 加速库，旨在提供比 Pjax 更现代化的解决方案。它通过拦截链接点击和表单提交事件，使用 Fetch API 加载页面内容，并在更新 DOM 后执行 JavaScript 代码，从而实现页面的快速加载和流畅过渡。",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YShenZe/TurboFeLy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YShenZe/TurboFeLy/issues"
+  },
+  "homepage": "https://github.com/YShenZe/TurboFeLy#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}

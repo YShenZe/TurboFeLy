@@ -1,0 +1,88 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* 公共样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: opacity 0.3s;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #f6f8fa;
+        }
+
+        #main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+        }
+
+        .content {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" id="home-link">Home</a>
+        <a href="about.html" id="about-link">About</a>
+    </nav>
+
+    <div id="main-container">
+        <h1>Welcome to TurboFeLy Demo</h1>
+        <div class="content">
+            <p>This is the home page demonstrating TurboFeLy's features:</p>
+            <ul>
+                <li>Instant page transitions</li>
+                <li>Prefetch on hover</li>
+                <li>Smart caching</li>
+                <li>DOM diff updates</li>
+            </ul>
+            <button onclick="showAlert()">Test Script</button>
+        </div>
+    </div>
+
+    <script src="../src/turbofely.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           new TurboFeLy({
+              container: '#main-container',
+              linkIds: ['home-link', 'about-link'],
+              prefetchDelay: 150,
+              preventClickDelay: 0,
+              debug: true,
+              cacheByViewport: true
+})
+
+            document.addEventListener('turbo:after-update', function(event) {
+                console.log('Page updated:', event.detail);
+            });
+        });
+
+        function showAlert() {
+            alert('Script executed successfully!');
+        }
+    </script>
+</body>
+</html>

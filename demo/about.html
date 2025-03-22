@@ -1,0 +1,79 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
+  <style type="text/css" media="all">
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      transition: opacity 0.3s;
+    }
+    
+    nav {
+      margin-bottom: 20px;
+    }
+    
+    a {
+      color: #0366d6;
+      text-decoration: none;
+      margin-right: 15px;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    
+    a:hover {
+      background-color: #f6f8fa;
+    }
+    
+    #main-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+    }
+    
+    .content {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" id="home-link">Home</a>
+    <a href="about.html" id="about-link">About</a>
+  </nav>
+  
+  <div id="main-container">
+    <h1>About TurboFeLy</h1>
+    <div class="content">
+      <p>TurboFeLy is a modern navigation system with features:</p>
+      <ul>
+        <li data-turbo-id="item1">Smart DOM diffing</li>
+        <li data-turbo-id="item2">LRU caching</li>
+        <li data-turbo-id="item3">Prefetching</li>
+        <li data-turbo-id="item4">Animated transitions</li>
+      </ul>
+    </div>
+  </div>
+  <script src="../src/turbofely.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      new TurboFeLy({
+        container: '#main-container',
+        linkIds: ['home-link', 'about-link'],
+        prefetchDelay: 150,
+        preventClickDelay: 0,
+        cacheByViewport: true
+      })
+    });
+  </script>
+</body>
+
+</html>
