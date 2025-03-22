@@ -37,14 +37,26 @@ classDiagram
         + ttl: Number
         + lruKeys: Array
         + storage: Map
-        + get(key): { html: String, expireAt: Number }
+        + get(key): <html: String, expireAt: Number>
         + set(key, value): void
         + prune(): void
     }
     
-    TurboCache --|> LRU算法
-    TurboCache --|> TTL过期
-    TurboCache --|> 维度隔离
+    interface LRUAlgorithm {
+        + updateLRU(key): void
+    }
+    
+    interface TTLExpiration {
+        + checkExpiration(key): Boolean
+    }
+    
+    interface DimensionIsolation {
+        + isolate(key): void
+    }
+    
+    TurboCache <|-- LRUAlgorithm
+    TurboCache <|-- TTLExpiration
+    TurboCache <|-- DimensionIsolation
 ```
 
 ## 分模块技术迁移方案
